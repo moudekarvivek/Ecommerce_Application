@@ -10,6 +10,7 @@ import com.ecommerce.project.payload.ProductDTO;
 import com.ecommerce.project.repositories.CartItemRepository;
 import com.ecommerce.project.repositories.CartRepository;
 import com.ecommerce.project.repositories.ProductRepository;
+import com.ecommerce.project.util.AuthUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -85,7 +86,7 @@ public class CartServiceImpl implements CartService{
 
 
     private Cart createCart() {
-        Cart userCart = cartRepo.findCartByEmail(authUtil.loggedIEmail());
+        Cart userCart = cartRepository.findCartByEmail(authUtil.loggedInEmail());
         if(userCart != null){
             return userCart;
         }
