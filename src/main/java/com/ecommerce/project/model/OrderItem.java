@@ -1,6 +1,5 @@
-package com.ecommerce.project.controller;
+package com.ecommerce.project.model;
 
-import com.ecommerce.project.model.Product;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

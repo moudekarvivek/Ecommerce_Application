@@ -1,6 +1,7 @@
-package com.ecommerce.project.controller;
+package com.ecommerce.project.model;
 
 import com.ecommerce.project.model.Address;
+import com.ecommerce.project.model.OrderItem;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
@@ -31,9 +32,9 @@ public class Order {
 
     private LocalDate orderDate;
 
-//    @OneToOne
-//    @JoinColumn(name = "payment_id")
-//    private Payment payment;
+    @OneToOne
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
 
     private Double totalAmount;
     private String orderStatus;
