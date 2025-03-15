@@ -46,6 +46,8 @@ public class JwtUtils {
                 .path("/api")
                 .maxAge(24 * 60 * 60)
                 .httpOnly(false)
+//                We are not operating on a secure network since we are on the localhost we don't have SSL certifivate
+                .secure(false)
                 .build();
         return cookie;
     }
